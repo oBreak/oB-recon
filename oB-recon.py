@@ -36,18 +36,19 @@ scanresults     = []
 
 # Functions
 
-'''
+"""
 Inbound function is meant to take in files of types txt, log, or csv. Handling for each file
 is differentiated.
 
 CSV files should only contain the data elements meant to be gathered. There should be no headers
 or labels.
 
-IP addresses and hostnames are accepted in the inbound files. Adding functionality to take custom ports.
-'''
+IP addresses and hostnames are accepted in the inbound files.
+"""
 
 def boot():
-    ''' Commented out because this would not work on Macs and it is just for making it look nice
+    """
+    Commented out because this would not work on Macs and it is just for making it look nice
     on the command line.
 
     try:
@@ -55,7 +56,7 @@ def boot():
     except SyntaxError:
         pass
 
-    '''
+    """
     print('Initializing program: oB-Recon.')
     print('Debug activated is: ' + str(debugSet) + '.')
     print('')
@@ -155,7 +156,17 @@ def outbound():
     return
 
 def scan(t): # Runs each scan on target 't'.
-    '''This is where the magic happens.'''
+    """
+    Possible candidate for combination with scanselect
+
+    Right now this function is basically just a for loop for all scans to call and send values to
+    scanselect(s,t) which does the actual selection and execution of the scans.
+
+    Current function is for each configurable scan in the config:
+
+    - check if a scan is set to run, if yes, add debug line if debug is on.
+    - check if scan is set to run, run the scan on target t.
+    """
     for s in conf['scans']:
         if conf['scans'][s] == 'True':
             if debugSet == True:
@@ -166,13 +177,24 @@ def scan(t): # Runs each scan on target 't'.
     return
 
 def scanselect(s,t):
+    """
+    Receives values s and t, where:
+
+    - s is the scan number, based on the configuration .ini file
+    - t is the target on which to run the scan
+
+    To add a new scan:
+
+    - add an additional function scanx where x is an integer.
+    - add an additional line to the switcher, 'scanx': int(x) and insert a comma if there
+    is a follow on scan.
+    """
     switcher = {
         'scan1': int(1),
         'scan2': int(2),
         'scan3': int(3)   #Add more scans here
     }
     y=(switcher[s])
-    #print ('run scan ' + str(y) + ' on ' + t)
     if y == 1:
         print('Launching scan1 on ' + t)
         scan1(t)
@@ -188,12 +210,12 @@ def scanselect(s,t):
 
 
 def scan1(x):
-    y = 'Begin scan1 on ' + x
-    scan1target = ['nmap', '-T4', '-F', x]
     '''
     Scan 1 target is set up to do a "quick scan" from nmap on target x. In order to do a more intense scan,
     the options would be nmap -T4 -A -v <ipaddress>. More to be added.
     '''
+    y = 'Begin scan1 on ' + x
+    scan1target = ['nmap', '-T4', '-F', x]
     result = subprocess.run(scan1target, stdout=subprocess.PIPE)
     scanresults.append(result.stdout.decode('utf-8'))
     return y
@@ -266,14 +288,14 @@ def debug2():
         return
 
 def arin(x):
-	url1		=	'http://whois.arin.net/rest/ip/'
-	url2		=	'.txt'
-	y		 	=	url1+x+url2
-	payload 	=	{'key':'val'}
-	headers		=	{}
-	res 		= 	requests.get(y, data=payload, headers=headers)
-	txt 		=	res.text
-	return txt
+    url1		=	'http://whois.arin.net/rest/ip/'
+    url2		=	'.txt'
+    y 		 	=	url1+x+url2
+    payload 	=	{'key':'val'}
+    headers		=	{}
+    res 		= 	requests.get(y, data=payload, headers=headers)
+    txt 		=   res.text
+    return txt
 
 def main():
     readConf()
