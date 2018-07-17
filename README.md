@@ -17,9 +17,9 @@ Scan 1 - nmap "quick" scan \
 Scan 2 - undefined \
 Scan 3 - ARIN lookup 
 
-### Pre-requisites
+### Pre-requisites (Important or this will not work!)
 
-- Internet connectivity
+- Network connectivity, assuming target is outside of local machine
 - nmap installed and callable
 - sudo privileges
 
