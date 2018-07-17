@@ -30,6 +30,8 @@ Scan 3 - ARIN lookup
 - Code scans, recon tools, and exploit validation (not execution)
 - Integration with nmap, openssl
 - Output results to file, allow configurable output formats
+- Search against composite block list
+- Take screenshot of web landing page
 - Make a web GUI (potentially)
 
 ### Not on Dev Roadmap (musing)
