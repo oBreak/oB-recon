@@ -26,8 +26,8 @@ debugfile       = os.path.join(fileDir, 'debug/debug.txt')
 scansrc         = os.path.join(fileDir, 'scansrc/')
 
 mypath          = ''
-mypathWin       = home + "\\Projects\\oB-recon\\in\\"
-mypathMac       = home + "/Projects/oB-recon/in/"
+mypathWin       = home + "\\Projects\\gh-oB-recon\\in\\"
+mypathMac       = home + "/Projects/gh-oB-recon/in/"
 targets         = []
 fileCount       = int(0)
 conf            = {}

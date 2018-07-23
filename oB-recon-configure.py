@@ -26,9 +26,9 @@ def writeConf():
     conf = configparser.ConfigParser()
     #conf['credentials-example']         = {'user1': 'example', 'pass1': 'password', 'user2': 'admin', 'pass2': 'root'}
     #conf['connectionstring-example']    = {'servername': 'server', 'port': '23'}
-    conf['scans']                       = {'scan1': 'False',\
+    conf['scans']                       = {'scan1': 'True',\
                                            'scan2': 'False',\
-                                           'scan3': 'True'}
+                                           'scan3': 'False'}
     with open ('conf.ini', 'w') as configfile:
         conf.write(configfile)
     return
