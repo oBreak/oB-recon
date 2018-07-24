@@ -114,6 +114,20 @@ def parse(x):
     for line in file:
         line = line.strip() # Removes blank lines.
         if line:
+            ''' This portion of the script is meant to discover if the inbound files are correctly formatted.
+            Decision tree:
+                If IP -> Add IP to target list (in other languages, this is an array)
+                If CIDR -> Convert to IPs
+                    -> Add all IPs to targets list
+                If IP Range -> Convert to IPs
+                    -> Add all IPs to targets list
+                
+            
+            if line == IP address format:
+                targets.append(line)
+                if debugSet == True:
+                debugLog.append('Appending ' + line + ' to targets.')
+            '''
             targets.append(line)
             if debugSet == True:
                 debugLog.append('Appending ' + line + ' to targets.')
