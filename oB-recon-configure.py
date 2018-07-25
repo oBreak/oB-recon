@@ -28,7 +28,14 @@ def writeConf():
     #conf['connectionstring-example']    = {'servername': 'server', 'port': '23'}
     conf['scans']                       = {'scan1': 'True',\
                                            'scan2': 'False',\
-                                           'scan3': 'False'}
+                                           'scan3': 'False',\
+                                           'scan4': 'False',\
+                                           'scan5': 'False',\
+                                           'scan6': 'False',\
+                                           'scan7': 'False',\
+                                           'scan8': 'False',\
+                                           'scan9': 'False',\
+                                           'scan10': 'False'}
     with open ('conf.ini', 'w') as configfile:
         conf.write(configfile)
     return
