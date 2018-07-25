@@ -10,9 +10,18 @@ Scan1   = Scan 1 target is set up to do a "quick scan" from nmap on target x.
           In order to do a more intense scan, the options would be nmap -T4 -A -v <ipaddress>,
           this is not a configurable toggle within the oB-recon program.
 
-Scan2   = Example
+Scan2   = Scan 2 enumerates the available ciphers via nmap --script ssl-enum-ciphers -p 443 <target>
 
 Scan3   = ARIN.net lookup for the IP in question.
+
+Scan4   = Example.
+Scan5   = Example.
+Scan6   = Example.
+Scan7   = Example.
+Scan8   = Example.
+Scan9   = Example.
+Scan10   = Example.
+
 """
 
 # Import

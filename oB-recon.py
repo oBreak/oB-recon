@@ -258,7 +258,9 @@ def scan1(x):
 def scan2(x):
     #print(x)
     y = 'Begin scan2 on ' + x
-    scanresults.append('These are the results of the scan.')
+    scan2target = ['nmap', '--script', 'ssl-enum-ciphers', '-p 443', x]
+    result = subprocess.run(scan2target, stdout=subprocess.PIPE)
+    scanresults.append(result.stdout.decode('utf-8'))
     return y
 
 def scan3(x):  # This is doing an ARIN lookup.
