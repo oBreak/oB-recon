@@ -1,5 +1,10 @@
 ### Change Log
 
+0.5 - 7/25/18
+
+- Added placeholders for `scan1(t)` through `scan10(t)` in both function 
+and `scanselect(s,t)`. Just have to add the code/resources for the specific scans.
+
 0.4 - 7/10/18
 
 - Added nmap quick scan as 'scan1'
