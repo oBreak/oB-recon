@@ -218,6 +218,27 @@ def scanselect(s,t):
     elif y == 3:
         print('Launching scan3 on ' + t)
         scan3(t)
+    elif y == 4:
+        print('Launching scan3 on ' + t)
+        scan4(t)
+    elif y == 5:
+        print('Launching scan3 on ' + t)
+        scan5(t)
+    elif y == 6:
+        print('Launching scan3 on ' + t)
+        scan6(t)
+    elif y == 7:
+        print('Launching scan3 on ' + t)
+        scan7(t)
+    elif y == 8:
+        print('Launching scan3 on ' + t)
+        scan8(t)
+    elif y == 9:
+        print('Launching scan3 on ' + t)
+        scan9(t)
+    elif y == 10:
+        print('Launching scan3 on ' + t)
+        scan10(t)
     else:
         print ('Invalid scan selected.')
     return
@@ -237,7 +258,9 @@ def scan1(x):
 def scan2(x):
     #print(x)
     y = 'Begin scan2 on ' + x
-    scanresults.append('These are the results of the scan.')
+    scan2target = ['nmap', '--script', 'ssl-enum-ciphers', '-p 443', x]
+    result = subprocess.run(scan2target, stdout=subprocess.PIPE)
+    scanresults.append(result.stdout.decode('utf-8'))
     return y
 
 def scan3(x):  # This is doing an ARIN lookup.
@@ -249,6 +272,48 @@ def scan3(x):  # This is doing an ARIN lookup.
     res = requests.get(y, data=payload, headers=headers)
     txt = res.text
     scanresults.append(txt)
+    return y
+
+def scan4(x):
+    #print(x)
+    y = 'Begin scan4 on ' + x
+    scanresults.append('These are the results of the scan.')
+    return y
+
+def scan5(x):
+    #print(x)
+    y = 'Begin scan5 on ' + x
+    scanresults.append('These are the results of the scan.')
+    return y
+
+def scan6(x):
+    #print(x)
+    y = 'Begin scan6 on ' + x
+    scanresults.append('These are the results of the scan.')
+    return y
+
+def scan7(x):
+    #print(x)
+    y = 'Begin scan7 on ' + x
+    scanresults.append('These are the results of the scan.')
+    return y
+
+def scan8(x):
+    #print(x)
+    y = 'Begin scan8 on ' + x
+    scanresults.append('These are the results of the scan.')
+    return y
+
+def scan9(x):
+    #print(x)
+    y = 'Begin scan9 on ' + x
+    scanresults.append('These are the results of the scan.')
+    return y
+
+def scan10(x):
+    #print(x)
+    y = 'Begin scan10 on ' + x
+    scanresults.append('These are the results of the scan.')
     return y
 
 def debug():

@@ -1,5 +1,6 @@
 ### Development Roadmap
 
+- Add encryption checking as scan 2 (available certificates and ciphers)
 - Combine `scan(t)` and `scanselect(s,t)`, they serve the same function.
 - Enable imported targets to be either IP address, CIDR notation, or hostname.
 - Code scans, recon tools, and exploit validation (not execution)
