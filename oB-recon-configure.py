@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 """
+
+
 Writes a configuration file for the oB-recon program. This controls which
 tests are run.
 
@@ -20,7 +22,7 @@ Scan6   = Example.
 Scan7   = Example.
 Scan8   = Example.
 Scan9   = Example.
-Scan10   = Example.
+Scan10  = Example.
 
 """
 
