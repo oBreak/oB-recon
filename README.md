@@ -19,7 +19,7 @@ oBreak ([email](mailto:obreakemail@gmail.com))
 
 ### Usage
 
-Place target ip addresses in .txt or .log files in the /in/ 
+Place target ip addresses in .txt or .log files in the `/in/`
 directory. One IP per line.
 
 When `scan1` or `scan2` is `true`, Python must be run as sudo since it is using nmap.
