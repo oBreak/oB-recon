@@ -14,6 +14,7 @@ oBreak ([email](mailto:obreakemail@gmail.com))
 
 - Python 3.6+ installed
 - Network connectivity, assuming target is outside of local machine
+- Install `configparser` and `requests` modules.
 - nmap installed and callable
 - sudo privileges (if running certain scans)
 
