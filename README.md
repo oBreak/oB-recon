@@ -28,6 +28,10 @@ When `scan1` or `scan2` is `true`, Python must be run as sudo since it is using 
 - Scan 1 - Port scan (nmap "quick" scan)
 - Scan 2 - SSL checking scan (powered by nmap)
 - Scan 3 - ARIN lookup 
+- Scan 4 - Quick ping sweep. Tries 1 ping per target with .5s delay. If no response, it
+skips to the next target. This scan works on Mac, I don't believe it works on Windows.
+Would need to edit the argument flags.
+
 
 Scan results are found in the `/out/` directory
 

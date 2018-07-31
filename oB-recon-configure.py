@@ -16,7 +16,7 @@ Scan2   = Scan 2 enumerates the available ciphers via nmap --script ssl-enum-cip
 
 Scan3   = ARIN.net lookup for the IP in question.
 
-Scan4   = Example.
+Scan4   = Quick ping sweep.
 Scan5   = Example.
 Scan6   = Example.
 Scan7   = Example.

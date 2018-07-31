@@ -1,11 +1,9 @@
 ### Development Roadmap
 
-- Add encryption checking as scan 2 (available certificates and ciphers)
 - Combine `scan(t)` and `scanselect(s,t)`, they serve the same function.
 - Enable imported targets to be either IP address, CIDR notation, or hostname.
 - Code scans, recon tools, and exploit validation (not execution)
-- Integration with nmap, openssl
-- Output results to file, allow configurable output formats
+- Allow configurable output formats
 - Search against composite block list
 - Take screenshot of web landing page
 - Make a web GUI (potentially)
@@ -24,3 +22,7 @@ named scans on the target when set to true in the config file.
 - [Complete] Move printed output of debug to debugLog table.
 - [Complete] Output debugLog to log file to be created with timestamps. Add these
 to the .gitignore.
+- [Complete] Add ping sweep.
+- [Complete] Add encryption checking as scan 2 (available certificates and ciphers)
+- [Complete] Integration with nmap, openssl
+- [Complete] Output results to file, rather than print.

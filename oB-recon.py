@@ -33,6 +33,8 @@ fileCount       = int(0)
 conf            = {}
 lineBreaks      = str('\n')
 scanresults     = []
+totalTargetsAndScans = int(0)
+percentageComplete = int(0)
 
 # Functions
 
@@ -206,7 +208,14 @@ def scanselect(s,t):
     switcher = {
         'scan1': int(1),
         'scan2': int(2),
-        'scan3': int(3)   #Add more scans here
+        'scan3': int(3),
+        'scan4': int(4),
+        'scan5': int(5),
+        'scan6': int(6),
+        'scan7': int(7),
+        'scan8': int(8),
+        'scan9': int(9),
+        'scan10': int(10)  # Add more scans here
     }
     y=(switcher[s])
     if y == 1:
@@ -219,25 +228,25 @@ def scanselect(s,t):
         print('Launching scan3 on ' + t)
         scan3(t)
     elif y == 4:
-        print('Launching scan3 on ' + t)
+        print('Launching scan4 on ' + t)
         scan4(t)
     elif y == 5:
-        print('Launching scan3 on ' + t)
+        print('Launching scan5 on ' + t)
         scan5(t)
     elif y == 6:
-        print('Launching scan3 on ' + t)
+        print('Launching scan6 on ' + t)
         scan6(t)
     elif y == 7:
-        print('Launching scan3 on ' + t)
+        print('Launching scan7 on ' + t)
         scan7(t)
     elif y == 8:
-        print('Launching scan3 on ' + t)
+        print('Launching scan8 on ' + t)
         scan8(t)
     elif y == 9:
-        print('Launching scan3 on ' + t)
+        print('Launching scan9 on ' + t)
         scan9(t)
     elif y == 10:
-        print('Launching scan3 on ' + t)
+        print('Launching scan10 on ' + t)
         scan10(t)
     else:
         print ('Invalid scan selected.')
@@ -274,10 +283,15 @@ def scan3(x):  # This is doing an ARIN lookup.
     scanresults.append(txt)
     return y
 
-def scan4(x):
+def scan4(x): #ping
     #print(x)
     y = 'Begin scan4 on ' + x
-    scanresults.append('These are the results of the scan.')
+    scan4target = ['ping', '-c 1', '-W 500', x]
+    try:
+        result = subprocess.run(scan4target, stdout=subprocess.PIPE)
+        scanresults.append(result.stdout.decode('utf-8'))
+    except KeyError:
+        print('did not work')
     return y
 
 def scan5(x):
@@ -376,14 +390,35 @@ def arin(x):
     txt 		=   res.text
     return txt
 
+def completionTrackerInit():
+    global totalTargetsAndScans
+    totalTargets = int(0)
+    totalScans = int(0)
+    for t in targets:
+        totalTargets = totalTargets + 1
+    for s in conf['scans']:
+        if conf['scans'][s] == 'True':
+            totalScans = totalScans + 1
+    totalTargetsAndScans = totalTargets * totalScans
+    return
+
 def main():
+    global percentageComplete
+    scansComplete = int(0)
     readConf()
     boot()
     i = inbound()
     for file in range(fileCount):
         parse(i[file])
+    completionTrackerInit()
     for t in targets:
         scan(t)
+        scansComplete = scansComplete + 1
+        try:
+            percentageComplete = round(scansComplete/totalTargetsAndScans, 2)
+        except ZeroDivisionError:
+            print ('No targets or scans configured to run. Cannot divide by zero.')
+        print(str(percentageComplete*100) + ' percent complete. Finished scan ' + str(scansComplete) + ' of ' + str(totalTargetsAndScans))
     pass
 
 # Run

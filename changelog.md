@@ -6,7 +6,12 @@
 and `scanselect(s,t)`. Just have to add the code/resources for the specific scans.
 - Added checking for SSL configuration as `scan2(t)`. This runs `nmap
 --script ssl-enum-ciphers -p 443 <target>`.
-- 
+- Added ping sweep as `scan4(t)`.
+- Added completion counter for scans, displaying x of y scans complete and percentage
+complete (to one decimal)
+- Added error handling for completion counter.
+- Added support in `scans()` and `scanselect()` functions for scan 4-10.
+- Updated readme, roadmap, changelog.
 
 0.4 - 7/10/18
 
