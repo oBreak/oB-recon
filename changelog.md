@@ -6,7 +6,7 @@
 
 0.5 - 7/25/18
 
-- Added placeholders for `scan1(t)` through `scan10(t)` in both function 
+- Added placeholders for `scan1(t)` through `scan10(t)` in both `scans()` function 
 and `scanselect(s,t)`. Just have to add the code/resources for the specific scans.
 - Added checking for SSL configuration as `scan2(t)`. This runs `nmap
 --script ssl-enum-ciphers -p 443 <target>`.
