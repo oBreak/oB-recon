@@ -1,5 +1,9 @@
 ### Change Log
 
+0.6 - TBD
+
+- 
+
 0.5 - 7/25/18
 
 - Added placeholders for `scan1(t)` through `scan10(t)` in both function 

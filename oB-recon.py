@@ -418,7 +418,7 @@ def main():
             percentageComplete = round(scansComplete/totalTargetsAndScans, 2)
         except ZeroDivisionError:
             print ('No targets or scans configured to run. Cannot divide by zero.')
-        print(str(percentageComplete*100) + ' percent complete. Finished scan ' + str(scansComplete) + ' of ' + str(totalTargetsAndScans))
+        print(str(percentageComplete*100) + '% percent complete. Finished scan ' + str(scansComplete) + ' of ' + str(totalTargetsAndScans))
     pass
 
 # Run
