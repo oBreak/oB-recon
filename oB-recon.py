@@ -162,12 +162,12 @@ def outbound():
         f.write(lineBreaks)  # This is to add a new line at the end of each line of the log or text file.
         n = n + 1
         if n % 100 == 0:
-            print('\tWriting outputs: ' + str(n) + ' lines complete.')
+            print('\tWriting outputs: ' + str(n) + ' scan results complete.')
         else:
             pass
     else:
         pass
-    print('\tOutput complete: ' + str(n) + ' lines written.')
+    print('\tOutput complete: ' + str(n) + ' scan results written.')
     print('\n')
     return
 
