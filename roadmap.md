@@ -1,6 +1,5 @@
 ### Development Roadmap
 
-- Combine `scan(t)` and `scanselect(s,t)`, they serve the same function.
 - Enable imported targets to be either IP address, CIDR notation, or hostname.
 - Code scans, recon tools, and exploit validation (not execution)
 - Allow configurable output formats
@@ -26,3 +25,4 @@ to the .gitignore.
 - [Complete] Add encryption checking as scan 2 (available certificates and ciphers)
 - [Complete] Integration with nmap, openssl
 - [Complete] Output results to file, rather than print.
+- [Obsolete] Combine `scan(t)` and `scanselect(s,t)`, they serve the same function.
