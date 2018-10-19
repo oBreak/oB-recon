@@ -31,6 +31,10 @@ When `scan1` or `scan2` is `true`, Python must be run as sudo since it is using 
 - Scan 4 - Quick ping sweep. Tries 1 ping per target with .5s delay. If no response, it
 skips to the next target. This scan works on Mac, I don't believe it works on Windows.
 Would need to edit the argument flags.
+- Scan 5 - Scan for NetBIOS port (139) to determine possible responder targets.
+- Scan 6 - Scan for LLMNR resolutions to determine possible responder targets. 
+**DOES NOT WORK YET**
+
 
 
 Scan results are found in the `/out/` directory

@@ -284,7 +284,6 @@ def scan3(x):  # This is doing an ARIN lookup.
     return y
 
 def scan4(x): #ping
-    #print(x)
     y = 'Begin scan4 on ' + x
     scan4target = ['ping', '-c 1', '-W 500', x]
     try:
@@ -295,15 +294,25 @@ def scan4(x): #ping
     return y
 
 def scan5(x):
-    #print(x)
     y = 'Begin scan5 on ' + x
-    scanresults.append('These are the results of the scan.')
+    scan5target = ['nmap', '-v', '-p 137,138,139', x]
+    try:
+        result = subprocess.run(scan5target, stdout=subprocess.PIPE)
+        scanresults.append(result.stdout.decode('utf-8'))
+    except KeyError:
+        print('did not work')
     return y
 
 def scan6(x):
-    #print(x)
     y = 'Begin scan6 on ' + x
-    scanresults.append('These are the results of the scan.')
+    arg = "'llmnr-resolve.hostname=" + x + "'"
+    scan6target = ['nmap', '--script', 'llmnr-resolve', '--script-args', arg]
+    print (scan6target)
+    try:
+        result = subprocess.run(scan6target, stdout=subprocess.PIPE)
+        scanresults.append(result.stdout.decode('utf-8'))
+    except KeyError:
+        print('did not work')
     return y
 
 def scan7(x):
