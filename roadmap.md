@@ -1,11 +1,12 @@
 ### Development Roadmap
 
-- Combine `scan(t)` and `scanselect(s,t)`, they serve the same function.
 - Enable imported targets to be either IP address, CIDR notation, or hostname.
 - Code scans, recon tools, and exploit validation (not execution)
 - Allow configurable output formats
 - Search against composite block list
 - Take screenshot of web landing page
+- Identify if there are inputs (text box, radio buttons, etc.) on web page
+- Validate if common web pages exist (e.g. Is IIS installed, etc.)
 - Make a web GUI (potentially)
 
 ### Not on Dev Roadmap (musing)
@@ -26,3 +27,4 @@ to the .gitignore.
 - [Complete] Add encryption checking as scan 2 (available certificates and ciphers)
 - [Complete] Integration with nmap, openssl
 - [Complete] Output results to file, rather than print.
+- [Obsolete] Combine `scan(t)` and `scanselect(s,t)`, they serve the same function.

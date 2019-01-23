@@ -17,9 +17,14 @@ Scan2   = Scan 2 enumerates the available ciphers via nmap --script ssl-enum-cip
 Scan3   = ARIN.net lookup for the IP in question.
 
 Scan4   = Quick ping sweep.
-Scan5   = Example.
-Scan6   = Example.
-Scan7   = Example.
+
+Scan5   = File share enumeration for NFS shares.
+
+Scan6   = Scan for responder possible targets, LLMNR and NetBIOS port scan.
+
+Scan7   = Capture available web elements. ## Not built yet. Need to understand this better. How do I capture graphics?
+          How do I determine which fields have inputs?
+
 Scan8   = Example.
 Scan9   = Example.
 Scan10  = Example.
@@ -37,7 +42,7 @@ def writeConf():
     conf = configparser.ConfigParser()
     #conf['credentials-example']         = {'user1': 'example', 'pass1': 'password', 'user2': 'admin', 'pass2': 'root'}
     #conf['connectionstring-example']    = {'servername': 'server', 'port': '23'}
-    conf['scans']                       = {'scan1': 'True',\
+    conf['scans']                       = {'scan1': 'False',\
                                            'scan2': 'False',\
                                            'scan3': 'False',\
                                            'scan4': 'False',\

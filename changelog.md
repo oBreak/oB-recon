@@ -2,11 +2,13 @@
 
 0.6 - TBD
 
-- 
+- Added `scan5(t)` code to scan for open NetBIOS ports, as possible responder targets.
+- Added `scan6(t)` code to scan for LLMNR resolutions, as possible respodner targets.
+- Added language for scan 5 and 6 in `README` and `oB-recon-configure.py`
 
 0.5 - 7/25/18
 
-- Added placeholders for `scan1(t)` through `scan10(t)` in both function 
+- Added placeholders for `scan1(t)` through `scan10(t)` in both `scans()` function 
 and `scanselect(s,t)`. Just have to add the code/resources for the specific scans.
 - Added checking for SSL configuration as `scan2(t)`. This runs `nmap
 --script ssl-enum-ciphers -p 443 <target>`.
