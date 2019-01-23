@@ -5,6 +5,8 @@
 - Allow configurable output formats
 - Search against composite block list
 - Take screenshot of web landing page
+- Identify if there are inputs (text box, radio buttons, etc.) on web page
+- Validate if common web pages exist (e.g. Is IIS installed, etc.)
 - Make a web GUI (potentially)
 
 ### Not on Dev Roadmap (musing)
