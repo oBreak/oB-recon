@@ -22,7 +22,9 @@ Scan5   = File share enumeration for NFS shares.
 
 Scan6   = Scan for responder possible targets, LLMNR and NetBIOS port scan.
 
-Scan7   = Example.
+Scan7   = Capture available web elements. ## Not built yet. Need to understand this better. How do I capture graphics?
+          How do I determine which fields have inputs?
+
 Scan8   = Example.
 Scan9   = Example.
 Scan10  = Example.
@@ -44,7 +46,7 @@ def writeConf():
                                            'scan2': 'False',\
                                            'scan3': 'False',\
                                            'scan4': 'False',\
-                                           'scan5': 'True',\
+                                           'scan5': 'False',\
                                            'scan6': 'False',\
                                            'scan7': 'False',\
                                            'scan8': 'False',\
