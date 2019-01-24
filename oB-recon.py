@@ -13,21 +13,32 @@ from pathlib import Path
 
 # Variables
 
+# Mac Paths
+
 debugSet        = True
 debugLog        = []
 home            = str(Path.home())
 fileDir         = os.path.dirname(os.path.realpath('__file__'))
-outfileWin      = os.path.join(fileDir, 'out\\out.txt')
 outfileMac      = os.path.join(fileDir, 'out/out.txt')
 outfile         = os.path.join(fileDir, 'out/out.txt')
-debugfileWin    = os.path.join(fileDir, 'debug\\debug.txt')
 debugfileMac    = os.path.join(fileDir, 'debug/debug.txt')
 debugfile       = os.path.join(fileDir, 'debug/debug.txt')
 scansrc         = os.path.join(fileDir, 'scansrc/')
-
 mypath          = ''
-mypathWin       = home + "\\Projects\\gh-oB-recon\\in\\"
 mypathMac       = home + "/Projects/gh-oB-recon/in/"
+
+# Checking for if the OS is Windows or Linux
+
+osCheck         = ''
+isWin           = 0
+
+# Windows Paths
+
+debugfileWin    = os.path.join(fileDir, 'debug\\debug.txt')
+# mypathWin       = home + "\\Projects\\gh-oB-recon\\in\\"
+mypathWin       = home + "\\Projects\\oB-Recon\\in\\"
+outfileWin      = os.path.join(fileDir, 'out\\out.txt')
+
 targets         = []
 fileCount       = int(0)
 conf            = {}
@@ -49,6 +60,9 @@ IP addresses and hostnames are accepted in the inbound files.
 """
 
 def boot():
+    global osCheck
+    global isWin
+
     """
     Commented out because this would not work on Macs and it is just for making it look nice
     on the command line.
@@ -62,6 +76,12 @@ def boot():
     print('Initializing program: oB-Recon.')
     print('Debug activated is: ' + str(debugSet) + '.')
     print('')
+
+    osCheck = os.name
+    if osCheck == 'nt':
+        isWin = 1
+    if isWin == 1:
+        debugLog.append('Program running on Windows.')
     pass
 
 
@@ -414,8 +434,8 @@ def completionTrackerInit():
 def main():
     global percentageComplete
     scansComplete = int(0)
-    readConf()
     boot()
+    readConf()
     i = inbound()
     for file in range(fileCount):
         parse(i[file])

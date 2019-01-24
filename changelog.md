@@ -1,10 +1,12 @@
 ### Change Log
 
-0.6 - TBD
+0.6 - 01/23/19
 
 - Added `scan5(t)` code to scan for open NetBIOS ports, as possible responder targets.
 - Added `scan6(t)` code to scan for LLMNR resolutions, as possible respodner targets.
 - Added language for scan 5 and 6 in `README` and `oB-recon-configure.py`
+- Added checker in boot for if program is run on Windows or Mac
+- Determined that scan 1, 2, 4, 5, and 6 do *not* work on Windows, yet.
 
 0.5 - 7/25/18
 
