@@ -1,5 +1,8 @@
 ### Development Roadmap
 
+- Simplify the number of specificity of the paths that are required in the beginning
+of the file. It should be easy to understand and use relative paths. It should not require the
+file paths to be the same as those on my computers for it to run.
 - Enable imported targets to be either IP address, CIDR notation, or hostname.
 - Code scans, recon tools, and exploit validation (not execution)
 - Allow configurable output formats
