@@ -43,6 +43,3 @@ possible responder targets.
 
 Scan results are found in the `/out/` directory
 
-### Compatibility
-
-Need to verify if this is both Windows and Mac compatible. It should be.
